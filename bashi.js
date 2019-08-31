@@ -1,6 +1,6 @@
 const toolbox = require("./bashi_tool_box.json");
 const Discord = require("discord.js");
-const bashi = new Discord.Client({disableEveryone: true});
+const bashi = new Discord.Client();
 const readline = require('readline');
 const Attachment = require('discord.js').Attachment;
 var fs = require("fs");
