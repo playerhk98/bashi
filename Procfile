@@ -1,1 +1,1 @@
-worker: node bashi.js
+\0xEF\0xBB\0xBFworker: node bashi.js
