@@ -213,4 +213,4 @@ bashi.on("message", async message => {
 
 });
 
-bashi.login(toolbox.token);
+bashi.login(process.env.BOT_TOKEN);
