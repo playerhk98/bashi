@@ -1,17 +1,17 @@
 const toolbox = require("./bashi_tool_box.json");
 const Discord = require("discord.js");
-const bashi = new Discord.Client();
+const client = new Discord.Client();
 const readline = require('readline');
 const Attachment = require('discord.js').Attachment;
 var fs = require("fs");
 
 
-bashi.on("ready",async () => {
+client.on("ready",async () => {
     console.log(`${bashi.user.username} is Ready 0_0`);
 
 });
 
-bashi.on("message", async message => {
+client.on("message", async message => {
     let msgarray = message.content.split(" ");
     const message_user = message.author.username;
 
@@ -213,4 +213,4 @@ bashi.on("message", async message => {
 
 });
 
-bashi.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
