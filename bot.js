@@ -14,7 +14,7 @@ client.on("ready",async () => {
 client.on("message", async message => {
     let msgarray = message.content.split(" ");
     const message_user = message.author.username;
-if(message.channel.name == "spam-test"){
+
 
     if(message == "Hellow Bashi!"){
         message.channel.send(`Hellow ${message_user}`);
@@ -213,7 +213,7 @@ if(message.channel.name == "spam-test"){
                 }
     });
     }   
-}
+
 });
 
 client.login(process.env.BOT_TOKEN);
