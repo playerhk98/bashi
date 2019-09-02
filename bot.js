@@ -28,7 +28,7 @@ client.on("message", async message => {
             let name_list = (data.toString()).split("\n");
             let message_array = message.content.split(" ");
             let unitname = message_array[1].charAt(0).toUpperCase() + message_array[1].substr(1);
-            let unit_index = name_list.findIndex(i => i.includes(`${unitname}`)) + 1 ;
+            let unit_index = name_list.findIndex(i => i = unitname) + 1 ;
             message.channel.send(`%renderq ${unit_index}`);
         });
     }
