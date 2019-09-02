@@ -93,8 +93,10 @@ client.on("message", async message => {
             let required_line = list_array[unit_line].split(",");
 
             
-           
-            message.channel.send(`http://assets.millennium-war.net/${required_line[0]}/${required_line[1]}`);
+           let embed = new Discord.RichEmbed()
+                 .setImage(`http://assets.millennium-war.net/${required_line[0]}/${required_line[1]}`);
+                
+            message.channel.sendEmbed(embed);
         });
 
     }
