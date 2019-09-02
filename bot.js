@@ -175,39 +175,39 @@ client.on("message", async message => {
         });
 }
     if(message_includes[0] == `${toolbox.prefix}hcg3q`){
-    fs.readFile("./file_list/filelist.txt",(err, data) => {
-        if (err) throw err;
-
-        let list_array = (data.toString()).split("\n");
+            fs.readFile("./file_list/filelist.txt",(err, data) => {
+                if (err) throw err;
+    
+                let list_array = (data.toString()).split("\n");
+                
+                let msg_array = message.content.split(" ");
+                let to_find = msg_array[1];
+                if(to_find<100){
+                    let unit_line = list_array.findIndex(i => i.includes(`HarlemCG_0${to_find}_2.png`));
+                    if (unit_line == -1){
+                        message.channel.send("make sure this unit have hcg1 or you are not g*y...");
+                    }
+                    else{
+                        let required_line = list_array[unit_line].split(",");
         
-        let msg_array = message.content.split(" ");
-        let to_find = msg_array[1];
-        if(to_find<100){
-            let unit_line = list_array.findIndex(i => i.includes(`HarlemCG_0${to_find}_2.png`));
-            if (unit_line == -1){
-                message.channel.send("make sure this unit have hcg3 or you are not g*y...");
-            }
-            else{
-                let required_line = list_array[unit_line].split(",");
-
-                let embed = new Discord.RichEmbed()
-                .setImage(`http://assets.millennium-war.net/${required_line[0]}/${required_line[1]}`);
-            message.channel.sendEmbed(embed);
-            }
-            
-        }
-        else{
-            if (unit_line == -1){
-                message.channel.send("make sure this unit have hcg3 or you are not g*y...");
-            }
-            else{
-                let required_line = list_array[unit_line].split(",");
-
-                let embed = new Discord.RichEmbed()
-                .setImage(`http://assets.millennium-war.net/${required_line[0]}/${required_line[1]}`);
-            message.channel.sendEmbed(embed);
-            }
-        }
+                        let embed = new Discord.RichEmbed()
+                        .setImage(`http://assets.millennium-war.net/${required_line[0]}/${required_line[1]}`);
+                    message.channel.sendEmbed(embed);
+                    }
+                }
+                else{
+                    let unit_line = list_array.findIndex(i => i.includes(`HarlemCG_${to_find}_2.png`));
+                    if (unit_line == -1){
+                        message.channel.send("make sure this unit have hcg1 or you are not g*y...");
+                    }
+                    else{
+                        let required_line = list_array[unit_line].split(",");
+        
+                        let embed = new Discord.RichEmbed()
+                        .setImage(`http://assets.millennium-war.net/${required_line[0]}/${required_line[1]}`);
+                    message.channel.sendEmbed(embed);
+                    }
+                }
     });
     }   
 
